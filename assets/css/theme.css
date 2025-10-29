@@ -11,11 +11,13 @@
   --beige: #F8F3E6;
 }
 
+
 /* Fondo general */
 body {
   background-color: var(--base);
   color: var(--beige);
 }
+
 
 header {
   text-align: center;

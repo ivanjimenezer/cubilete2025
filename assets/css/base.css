@@ -1,11 +1,34 @@
 /* base.css */
 
 /* Tipografía y estructura global */
+/* General fade behavior */
 body {
   font-family: 'Inter', system-ui, sans-serif;
   margin: 0;
   line-height: 1.6;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease;
 }
+
+/* Smooth fade-out when leaving */
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Header fade (optional) */
+#site-header {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#site-header.loaded {
+  opacity: 1;
+}
+
+
+
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'bebas-neue-by-fontfabric', sans-serif;
   font-weight: 400;   /* Regular weight */
@@ -20,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 } 
 
 header h1 {
-  
+
 }
 
 p {
@@ -62,4 +85,25 @@ footer {
 .cta {
   text-align: center;
   margin: 3rem 0;
+}
+
+/* VIDEO */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 2rem auto;       /* centers the video block */
+  display: flex;
+  justify-content: center;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
 }

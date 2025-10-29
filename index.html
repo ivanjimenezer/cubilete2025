@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="assets/css/theme.css" />
 <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
+
 <body>
 
  <div id="site-header"></div>
@@ -21,16 +22,11 @@
 <p>Ruta: Veracruz → Cubilete → Querétaro → Veracruz</p>
 </section>
 <div class="cta">
-<a href="pages/que-es.html" class="btn">Conoce más</a>
+<a href="que-es.html" class="btn">Conoce más</a>
 </div>
 <footer>
 <p>© 2025 Testimonio y Esperanza · Peregrinación Juvenil a Cristo Rey</p>
 </footer>
+<script src="../assets/js/getheader.js"></script>
 </body>
 </html>
-<script>
-  fetch("/partials/header.html")
-    .then(res => res.text())
-    .then(html => document.getElementById("site-header").innerHTML = html)
-    .catch(err => console.error("Header include failed:", err));
-</script>
