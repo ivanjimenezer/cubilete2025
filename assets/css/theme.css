@@ -20,8 +20,7 @@ body {
 
 
 header {
-  text-align: center;
-  padding: 3rem 1rem;
+  text-align: center; 
   background-color: var(--base);
   /* background: linear-gradient(180deg, var(--base) 0%, var(--azul-gris) 100%); */
 }
@@ -29,11 +28,11 @@ header {
 
 
 header h1 {
-  font-size: 3rem; 
+  font-size: 5.3rem; 
   color: var(--crema);
 }
 header h2 {
-  font-size: 5rem; 
+  font-size: 2rem; 
   color: var(--crema);
 }
 
@@ -45,12 +44,10 @@ header p {
 nav {
   background-color: var(--base);
   text-align: center;
-  padding: 0.75rem;
 }
 
 nav a {
-  color: var(--beige);
-  margin: 0 1rem;
+  color: var(--beige); 
   font-weight: 600;
 }
 
@@ -87,3 +84,6 @@ footer {
 .page-alt h1 {
   color: var(--dorado);
 }
+
+
+

@@ -1,6 +1,9 @@
 /* base.css */
 
 /* Tipografía y estructura global */
+
+
+
 /* General fade behavior */
 body {
   font-family: 'Inter', system-ui, sans-serif;
@@ -36,19 +39,34 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   text-transform: uppercase; /* Optional: gives that signature look */
 }
+header{
+  padding: 0.5rem 0 0;/* drastically reduce top/bottom padding */
+}
 
-h1, h2, h3, h4, h5, h6 {
+header h1,
+header h2 {
   margin: 0;
-  line-height: 1.2;
-} 
+  line-height: 1.1; /* brings them visually closer */
+}
 
 header h1 {
-
+line-height: 1;     /* remove extra space */
+margin-bottom: 0rem;  /* tiny gap below h1 */
+transform: translateY(-0.2rem); 
 }
 
-p {
-  margin-bottom: 1rem;
+header h2 {
+  margin-top: 0; /* no unnecessary top margin */
+  padding-top: 0; 
 }
+
+nav {
+  margin-top: 0.4rem;
+}
+ 
+
+
+
 
 img {
   max-width: 100%;
