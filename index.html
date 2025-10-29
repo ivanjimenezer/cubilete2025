@@ -5,25 +5,17 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>CUBI2026 · Peregrinación Juvenil a Cristo Rey</title>
+<link rel="stylesheet" href="https://use.typekit.net/hsk5dxy.css">
 <link rel="stylesheet" href="assets/css/base.css" />
 <link rel="stylesheet" href="assets/css/theme.css" />
 <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
 <body>
-<header>
-<h1>CUBI2026</h1>
-<p>Donde hay cruz y sacrificio, nace la gloria.</p>
-</header>
-<nav>
-<a href="index.html">Inicio</a>
-<a href="pages/que-es.html">¿Qué es?</a>
-<a href="pages/itinerario.html">Itinerario</a>
-<a href="pages/costos.html">Costos</a>
-<a href="pages/eventos.html">Eventos</a>
-<a href="pages/registro.html">Registro</a>
-</nav>
+
+ <div id="site-header"></div>
+
 <section class="hero">
-<img src="assets/img/logo-cubi2026.svg" alt="Logo Cubilete 2026" />
+<img src="assets/img/cubi_wallpaper.png" alt="Logo Cubilete 2026" />
 <h2>¡Jarochos al cerro!</h2>
 <p>Centenario de la Cristiada · Del 30 de enero al 1 de febrero</p>
 <p>Ruta: Veracruz → Cubilete → Querétaro → Veracruz</p>
@@ -36,3 +28,9 @@
 </footer>
 </body>
 </html>
+<script>
+  fetch("/partials/header.html")
+    .then(res => res.text())
+    .then(html => document.getElementById("site-header").innerHTML = html)
+    .catch(err => console.error("Header include failed:", err));
+</script>

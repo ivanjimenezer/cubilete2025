@@ -6,10 +6,21 @@ body {
   margin: 0;
   line-height: 1.6;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'bebas-neue-by-fontfabric', sans-serif;
+  font-weight: 400;   /* Regular weight */
+  letter-spacing: 0.5px;
+  font-style: normal;
+  text-transform: uppercase; /* Optional: gives that signature look */
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   line-height: 1.2;
+} 
+
+header h1 {
+  
 }
 
 p {
