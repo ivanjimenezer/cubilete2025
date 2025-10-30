@@ -5,12 +5,15 @@
   --base: #dd596e; /* Nuevo color base */
   --azul-petroleo: #0C3B4C; /* Usado solo en vistas seleccionadas */
   --azul-gris: #163B46;
-  --crema: #F2D2A2;
+  
   --coral: #D95E6C;
   --dorado: #E9C46A;
   --beige: #F8F3E6;
 }
 
+.note{
+  color: var(--beige);
+}
 
 /* Fondo general */
 body {

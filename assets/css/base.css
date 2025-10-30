@@ -28,10 +28,7 @@ body.fade-out {
 #site-header.loaded {
   opacity: 1;
 }
-
-
-
-
+ 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'bebas-neue-by-fontfabric', sans-serif;
   font-weight: 400;   /* Regular weight */
@@ -65,9 +62,105 @@ padding-left: 0px;
 padding-right: 0px;
 
 }
+
+/* ---------------------------------------------------------------- */ 
+
+/* Footer container styling */
+footer {
+  text-align: center;               /* Centers all text content */
+  padding: 1.5rem 1rem;            /* Adds space inside footer (top/bottom, left/right) */
+  font-size: 0.9rem;               /* Sets smaller font size for copyright text */ 
+}
+
+/* Container for all footer buttons */
+.footer-buttons {
+  display: flex;                    /* Arranges buttons in a row */
+  justify-content: center;          /* Centers buttons horizontally */
+  align-items: center;             /* Centers buttons vertically */
+  gap: 2rem;                       /* Space between buttons */
+  margin-bottom: 1.5rem;           /* Space below buttons before copyright text */
+  flex-wrap: wrap;                 /* Allows buttons to wrap on small screens */
+}
+
+/* Individual button container styling */
+.btn-footer {
+  width: 10rem;
+  min-width: 5rem;
+  height: auto;
+  transition: transform 0.3s ease; /* Smooth scaling animation on hover */ 
+  border-radius: 12px;             /* Rounded corners */
+  padding: 8px;                    /* Space inside button around image */
+  border-color:  #F2D2A2;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow effect */
+  display: flex;                   /* Ensures proper image alignment */
+  align-items: center;             /* Centers image vertically */
+  justify-content: center;         /* Centers image horizontally */
+}
+
+/* Hover effect for buttons */
+.btn-footer:hover {
+  transform: scale(1.05);          /* Slight zoom effect on hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+}
+
+/* Base styling for all footer images */
+.footer-img {
+  height: auto;                    /* Sets consistent height */
+  width: auto;                     /* Maintains original aspect ratio */
+  display: block;                  /* Removes extra space below image */
+  cursor: pointer;                 /* Shows hand cursor on hover */
+  border-radius: 8px;              /* Slightly rounded image corners */
+}
+
+/* Specific styling for Instagram button */
+.btn-insta { 
+  object-fit: contain;             /* Ensures image fits without distortion */
+}
+
+/* Specific styling for document buttons (WhatsApp and Register) */
+.btn-doc { 
+  object-fit: contain;             /* Ensures image fits without distortion */
+}
+
+/* Responsive design for tablets and smaller screens */
+@media (max-width: 768px) {
+  .footer-buttons {
+    gap: 1rem;                     /* Reduces space between buttons */
+  }
+  
+  .footer-img {
+    height: 45px;                  /* Slightly smaller images on mobile */
+  } 
+  
+  .btn-footer {
+    padding: 6px;                  /* Slightly less padding */
+    border-radius: 10px;           /* Slightly smaller border radius */
+  }
+}
+
+/* Responsive design for very small screens */
+@media (max-width: 480px) {
+  .footer-buttons {
+    gap: 0.8rem;                   /* Even smaller gap between buttons */
+  }
+  
+  .footer-img {
+    height: 40px;                  /* Even smaller images */
+  }
+   
+  .btn-footer {
+    padding: 5px;                  /* Minimal padding */
+    border-radius: 8px;            /* Smaller rounded corners */
+  }
+}
+
+/* ----------------------------------------------------------------------- */
+
 section {
 padding-left: 0px;
 padding-right: 0px;
+justify-content: center;
+  align-items: center;
 
 }
 .description{
@@ -100,12 +193,18 @@ img {
   max-width: 100%;
   height: auto;
 }
-.cristo-wp{
-    width: 100vw;          /* makes the image span the full viewport width */
-  max-width: 100vw;      /* prevents it from being limited by parent padding */
-  margin-left: calc(50% - 50vw); /* pulls image to the screen edge */
-  display: block;        /* removes inline spacing */
-  overflow: visible;     /* ensures it isn’t clipped */
+
+.container-cristo-wp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cristo-wp {
+  width: 50%;          /* Use percentage instead of viewport units */
+  max-width: 600px;    /* Optional: set a maximum width */
+  display: block;
+  margin: 0 auto;      /* This will center the image */
 }
 a {
   text-decoration: none;
@@ -113,21 +212,6 @@ a {
 }
 
 
-
-
-footer {
-  text-align: center;
-  padding: 1.5rem 1rem;
-  font-size: 0.9rem;
-}
-
-.footer-img{ 
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-}
 
 
 
