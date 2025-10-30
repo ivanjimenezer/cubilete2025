@@ -204,6 +204,9 @@ img {
   width: 50%;          /* Use percentage instead of viewport units */
   max-width: 600px;    /* Optional: set a maximum width */
   display: block;
+  border-radius: 8px;
+  
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   margin: 0 auto;      /* This will center the image */
 }
 a {
@@ -230,28 +233,43 @@ a {
   text-align: center;
   margin: 3rem 0;
 }
-
-/* VIDEO */
+/* VIDEO - Simple Fixed Height Method */
 .video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio */
-  height: 0;
-  overflow: hidden;
-  max-width: 800px;
-  margin: 2rem auto;       /* centers the video block */
+  width: 90%;                    /* Takes 90% of parent width */
+  max-width: 800px;              /* Maximum width for larger screens */
+  margin: 2rem auto;             /* Centers the video block */
   display: flex;
-  justify-content: center;
+  justify-content: center;       /* Centers iframe horizontally */
 }
 
 .video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100%;                   /* Full width of container */
+  height: 450px;                 /* Fixed height for desktop */
   border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* Responsive design */
+@media (max-width: 768px) {
+  .video-wrapper {
+    width: 95%;
+  }
+  
+  .video-wrapper iframe {
+    height: 400px;               /* Slightly smaller for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .video-wrapper {
+    width: 100%;
+    margin: 1.5rem auto;
+  }
+  
+  .video-wrapper iframe {
+    height: 250px;               /* Smaller for mobile */
+  }
+}
 /* === ITINERARIO SECTION (main wrapper) === */
 .section-itinerario {
   display: flex;                /* Enables flexbox for layout */
