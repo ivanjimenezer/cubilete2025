@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const headerContainer = document.getElementById("site-header");
+  const footerContainer = document.getElementById("site-footer");
 
   // Completely hide page initially
   document.body.style.visibility = "hidden";
@@ -21,6 +22,26 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch(err => {
         console.error("Header include failed:", err);
+        document.body.style.visibility = "visible";
+        document.body.style.opacity = "1";
+      });
+  }
+   if (footerContainer) {
+    fetch("/partials/footer.html")
+      .then(res => res.text())
+      .then(html => {
+        footerContainer.innerHTML = html;
+        footerContainer.classList.add("loaded");
+
+        // Make sure the DOM has updated before showing the page
+        requestAnimationFrame(() => {
+          document.body.style.visibility = "visible";
+          document.body.style.transition = "opacity 0.4s ease";
+          document.body.style.opacity = "1";
+        });
+      })
+      .catch(err => {
+        console.error("Footer include failed:", err);
         document.body.style.visibility = "visible";
         document.body.style.opacity = "1";
       });

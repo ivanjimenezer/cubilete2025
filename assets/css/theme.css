@@ -56,8 +56,7 @@ nav a:hover {
 }
 
 .hero {
-  text-align: center;
-  padding: 3rem 1rem;
+  text-align: center; 
 }
 
 .btn {
@@ -84,6 +83,10 @@ footer {
 .page-alt h1 {
   color: var(--dorado);
 }
+
+
+/* TABLE */
+
 
 
 

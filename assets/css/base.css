@@ -60,35 +60,77 @@ header h2 {
   padding-top: 0; 
 }
 
+main{
+padding-left: 0px;
+padding-right: 0px;
+
+}
+section {
+padding-left: 0px;
+padding-right: 0px;
+
+}
+.description{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 nav {
   margin-top: 0.4rem;
 }
+.title{
+  margin-top: 0px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
  
+h1, h2{
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
 
-
+p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
 img {
   max-width: 100%;
   height: auto;
 }
-
+.cristo-wp{
+    width: 100vw;          /* makes the image span the full viewport width */
+  max-width: 100vw;      /* prevents it from being limited by parent padding */
+  margin-left: calc(50% - 50vw); /* pulls image to the screen edge */
+  display: block;        /* removes inline spacing */
+  overflow: visible;     /* ensures it isn’t clipped */
+}
 a {
   text-decoration: none;
   cursor: pointer;
 }
 
-main {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-}
+
+
 
 footer {
   text-align: center;
   padding: 1.5rem 1rem;
   font-size: 0.9rem;
 }
+
+.footer-img{ 
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+
+
 
 /* Botones */
 .btn {
@@ -124,4 +166,226 @@ footer {
   width: 100%;
   height: 100%;
   border-radius: 8px;
+}
+
+/* === ITINERARIO SECTION (main wrapper) === */
+.section-itinerario {
+  display: flex;                /* Enables flexbox for layout */
+  flex-direction: column;       /* Stacks all .day blocks vertically */
+  align-items: center;          /* Centers them horizontally as a group */
+  justify-content: center;      /* Centers vertically if parent allows space */
+  gap: 2rem;                    /* Adds equal spacing between each day block */
+  padding: 2rem 0;              /* Adds vertical breathing room */
+}
+
+/* === EACH DAY BLOCK === */
+.day {
+  display: flex;                /* Makes .day-label and .container-events align side-by-side */
+  align-items: stretch;         /* Keeps them same height */
+  justify-content: center;      /* Ensures content stays centered within each day */
+  margin: 0;                    /* Removes unwanted external spacing */
+  padding: 0;                   /* Resets padding that caused indentation */
+  width: 100%;                  /* Makes all day blocks equal width */
+  max-width: 700px;             /* Prevents them from being too wide on large screens */ 
+}
+
+/* === DAY LABEL COLUMN === */
+.day-label {
+  writing-mode: vertical-rl;    /* Makes text vertical (top-to-bottom) */
+  text-orientation: mixed;
+  transform: rotate(180deg);    /* Flips vertical text to read bottom-up */
+  display: flex;
+  align-items: center;          /* Centers text vertically in its area */
+  justify-content: center;      /* Centers horizontally */
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #0e2233;
+  font-size: 1rem;
+  margin-right: 1rem;           /* Small spacing between label and events */
+}
+
+/* === EVENTS LIST === */
+.container-events {
+  border-left: 3px solid var(--dorado, #d4a537); /* Decorative left line */
+  padding-left: 1rem;           /* Small indent inside event list */
+  margin: 0;                    /* Removes external margins */
+  list-style: none;             /* No bullets */
+  flex: 1;                      /* Takes remaining space in row */
+}
+
+/* === INDIVIDUAL EVENTS === */
+.container-events li {
+  line-height: 1.6;
+  padding: 0.3rem 0;
+}
+
+
+/* You didn’t center the <li>s themselves.
+Instead, you:
+
+made both columns (.day-label and .container-events) equal height, and
+
+told .day-label to center its own text within that height.
+
+So the label naturally aligns to the middle of all its corresponding events — perfectly centered — without ever touching the <li> elements. */
+
+
+.day ul {
+  list-style: none; 
+  margin: 0;
+  padding-inline-start: 10px;
+}
+
+.day li {
+  padding: 0.3rem 0;
+  line-height: 1.5;
+}
+
+.day li strong {
+  color: #0e2233;
+  font-weight: 700;
+}
+
+.note {
+  text-align: center;
+  font-style: italic;
+  color: #444;
+  margin-top: 2rem;
+}
+/* === COSTOS SECTION (overall container) === */
+.costos {
+  color: #fff3d9;            /* Sets all text to a soft cream tone for good contrast */
+  font-family: 'Poppins', sans-serif; /* Applies your modern, clean font */
+  text-align: center;        /* Centers all text and inline elements horizontally */
+}
+
+/* === MAIN TITLE ABOVE THE SECTION === */
+
+/* === WRAPPER FOR ALL CONTENT INSIDE THE SECTION === */
+.costos-content {
+  max-width: 700px;          /* Restrains the section width so it doesn’t stretch too wide */
+  margin: 0 auto;            /* Centers the block within the page horizontally */
+ 
+  align-items: center;       /* Centers them horizontally as a group */
+  gap: 2rem;                 /* Adds vertical spacing between each stacked element */
+}
+
+/* === PRICE BLOCK === */
+.costos-precio {
+  background-color: transparent; /* Keeps background clean and consistent */
+}
+
+.precio {
+  font-size: 6rem;           /* Makes the price large and prominent */
+  font-weight: 700;          /* Bold text for emphasis */
+  margin: 0;                 /* Removes default spacing around the heading */
+  color: #fff3d9;            /* Keeps the price in the same cream color as the section */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.25); /* Adds a subtle shadow for depth */
+}
+
+/* === "Incluye" LIST CONTAINER === */
+.costos-incluye {
+  text-align: center;        /* Centers text in this part */
+}
+
+.costos-incluye h2 {
+  font-size: 3rem;         /* Medium size for the “Incluye” subheading */
+  text-transform: uppercase; /* Capital letters for consistency with main title */
+  margin-top: 0px; 
+  margin-bottom: 1rem;       /* Adds space below before list items */
+  color: #fff3d9;            /* Matches the cream tone for cohesion */
+}
+
+/* === LIST OF INCLUDED ITEMS === */
+.costos-incluye ul {
+  list-style: none;          /* Removes default bullets */
+  padding: 0;                /* Removes browser default left padding */
+  margin: 0;                 /* Removes default top and bottom margins */
+  line-height: 1.8;          /* Increases line spacing for readability */
+  font-size: 1rem;           /* Comfortable text size */
+}
+
+.costos-incluye li {
+  margin-bottom: 0.8rem;     /* Adds space between each line item */
+}
+
+/* === IMAGE INSIDE LAST LIST ITEM === */
+.imagenes {
+  display: flex;             /* Uses flexbox for easy centering */
+  justify-content: center;   /* Centers the image horizontally */
+  align-items: center;       /* Centers vertically (useful if multiple images later) */
+  margin-top: 1rem;          /* Adds space above the image */
+}
+
+.imagenes img {
+  max-width:  240px;              /* Sets a clear, consistent image size */
+  height: auto;              /* Keeps the image’s aspect ratio */
+  display: block;            /* Removes inline spacing under the image */
+}
+
+/* === RESPONSIVE ADJUSTMENTS (for mobile screens) === */
+@media (max-width: 600px) {
+  .precio {
+    font-size: 5rem;       /* Slightly reduces price size on small devices */
+  }
+
+  .costos-incluye h2 {
+    font-size: 2.5rem;       /* Makes subheading smaller for better fit */
+  }
+
+  .imagenes img {
+    width: 180px;            /* Shrinks image slightly on narrow screens */
+  }
+}
+
+/* === PAGOS SECTION === */
+.plan-pagos {
+  background-color: var(--azul-gris, #0e2233);
+  color: #fff3d9;
+  font-family: 'Poppins', sans-serif; 
+  text-align: center;
+}
+
+.plan-pagos h1 {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.pagos-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.pagos-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 500px;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.pagos-table th,
+.pagos-table td {
+  border: 2px solid #fff3d9;
+  padding: 0.8rem 1rem;
+}
+
+.pagos-table th {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.pagos-table td {
+  text-align: center;
+}
+
+.nota {
+  font-size: 0.9rem;
+  color: #fff3d9;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 1rem;
 }
